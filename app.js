@@ -19,8 +19,6 @@ const buttonClose = document.getElementById("button-close")
 const buttonReset = document.getElementById("button-reset")
 const buttonStop = document.getElementById("button-stop")
 
-// buttonClose.disabled = true; 
-
 let openInterval;
 let closedInterval;
 
@@ -54,8 +52,6 @@ function startOpenTimer() {
 //open button
 
 buttonOpen.addEventListener("click", function() {
-    // buttonOpen.disabled = true; 
-    // buttonClose.disabled = false;
 
     if(openInterval) {
         openClicksCount++
@@ -99,8 +95,6 @@ function startClosedTimer() {
 //close button
 
 buttonClose.addEventListener("click", function() {
-    // buttonOpen.disabled = false; 
-    // buttonClose.disabled = true; 
 
     if(closedInterval){
         closedClicksCount++
@@ -126,9 +120,6 @@ buttonStop.addEventListener("click", function() {
 buttonReset.addEventListener("click", function() {
     clearInterval(openInterval)
     clearInterval(closedInterval)
-
-    // buttonOpen.disabled = false; 
-    // buttonClose.disabled = true; 
 
     openInterval = null
     closedInterval = null
