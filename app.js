@@ -1,5 +1,5 @@
-const seconds = 00
-const tens = 00
+let seconds = 00
+let tens = 00
 
 const appendTens = document.getElementById("tens")
 const appendSeconds = document.getElementById("seconds")
@@ -8,7 +8,7 @@ const buttonOpen = document.getElementById("button-open")
 const buttonClose = document.getElementById("button-close")
 const buttonReset = document.getElementById("button-Reset")
 
-const Interval
+let interval;
 
 //open
 
@@ -36,6 +36,7 @@ function startOpenTimer() {
 }
 
 buttonOpen.addEventListener("click", function() {
+   
     interval = setInterval(startOpenTimer)
 
 })
