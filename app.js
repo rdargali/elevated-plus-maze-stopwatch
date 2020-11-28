@@ -24,6 +24,10 @@ let closedInterval;
 //open
 
 function startOpenTimer() {
+    if(closedInterval){
+        clearInterval(closedInterval)
+    }
+    
     openTensCount++
     
     openClicks.innerHTML = openClicksCount
@@ -48,6 +52,33 @@ function startOpenTimer() {
     }
 }
 
+function startClosedTimer() {
+    closedTensCount++
+    
+    closedClicks.innerHTML = closedClicksCount
+
+   
+
+    if(closedTensCount < 9) {
+        closedTens.innerHTML = "0" + closedTensCount
+    }
+
+    if(closedTensCount > 9) {
+        closedTens.innerHTML = closedTensCount
+    }
+
+    if(closedTensCount > 99){
+        closedSecondsCount++
+        closedSeconds.innerHTML = "0" + closedSecondsCount
+        closedTensCount = 0
+        closedTens.innerHTML = "0" + 0
+    }
+
+    if(closedSecondsCount > 9){
+        closedSeconds.innerHTML = closedSecondsCount
+    }
+}
+
 
 
 buttonOpen.addEventListener("click", function() {
@@ -57,16 +88,24 @@ buttonOpen.addEventListener("click", function() {
 })
 
 buttonClose.addEventListener("click", function() {
-    console.log("hello close")
-    closedClicksCount++
+    
     clearInterval(openInterval)
+    closedClicksCount++
+    closedInterval = setInterval(startClosedTimer)
 })
 
-buttonReset.addEventListener("click", function() {
-    console.log("hello")
-    clearInterval(startOpenTimer)
-    // tens = "00"
-    // seconds = "00"
-    // appendSeconds.innerHTML = seconds
-    // appendTens.innerHTML = tens
-})
+
+
+
+
+
+
+
+// buttonReset.addEventListener("click", function() {
+//     console.log("hello")
+//     clearInterval(startOpenTimer)
+//     // tens = "00"
+//     // seconds = "00"
+//     // appendSeconds.innerHTML = seconds
+//     // appendTens.innerHTML = tens
+// })
