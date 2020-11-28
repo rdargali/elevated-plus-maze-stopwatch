@@ -18,6 +18,8 @@ const buttonOpen = document.getElementById("button-open")
 const buttonClose = document.getElementById("button-close")
 const buttonReset = document.getElementById("button-reset")
 
+buttonClose.disabled = true; 
+
 let openInterval;
 let closedInterval;
 
@@ -82,13 +84,16 @@ function startClosedTimer() {
 
 
 buttonOpen.addEventListener("click", function() {
+    buttonOpen.disabled = true; 
+    buttonClose.disabled = false;
     openClicksCount++
     openInterval = setInterval(startOpenTimer)
 
 })
 
 buttonClose.addEventListener("click", function() {
-    
+    buttonOpen.disabled = false; 
+    buttonClose.disabled = true; 
     clearInterval(openInterval)
     closedClicksCount++
     closedInterval = setInterval(startClosedTimer)
