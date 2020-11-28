@@ -17,8 +17,9 @@ const closedClicks = document.getElementById("closed-clicks")
 const buttonOpen = document.getElementById("button-open")
 const buttonClose = document.getElementById("button-close")
 const buttonReset = document.getElementById("button-reset")
+const buttonStop = document.getElementById("button-stop")
 
-buttonClose.disabled = true; 
+// buttonClose.disabled = true; 
 
 let openInterval;
 let closedInterval;
@@ -26,10 +27,6 @@ let closedInterval;
 //open
 
 function startOpenTimer() {
-    if(closedInterval){
-        clearInterval(closedInterval)
-    }
-
     openTensCount++
     
     openClicks.innerHTML = openClicksCount
@@ -53,6 +50,24 @@ function startOpenTimer() {
         openSeconds.innerHTML = openSecondsCount
     }
 }
+
+//open button
+
+buttonOpen.addEventListener("click", function() {
+    // buttonOpen.disabled = true; 
+    // buttonClose.disabled = false;
+
+    if(openInterval) {
+        openClicksCount++
+    }else {
+        openClicksCount++
+        clearInterval(closedInterval)
+        closedInterval = null
+        openInterval = setInterval(startOpenTimer)
+    }
+})
+
+//close
 
 function startClosedTimer() {
     closedTensCount++
@@ -81,32 +96,42 @@ function startClosedTimer() {
     }
 }
 
-
-
-buttonOpen.addEventListener("click", function() {
-    buttonOpen.disabled = true; 
-    buttonClose.disabled = false;
-    openClicksCount++
-    openInterval = setInterval(startOpenTimer)
-
-})
+//close button
 
 buttonClose.addEventListener("click", function() {
-    buttonOpen.disabled = false; 
-    buttonClose.disabled = true; 
-    clearInterval(openInterval)
-    closedClicksCount++
-    closedInterval = setInterval(startClosedTimer)
+    // buttonOpen.disabled = false; 
+    // buttonClose.disabled = true; 
+
+    if(closedInterval){
+        closedClicksCount++
+    } else {
+        closedClicksCount++
+        clearInterval(openInterval)
+        openInterval = null
+        closedInterval = setInterval(startClosedTimer)
+    }
 })
 
+//stop button
 
+buttonStop.addEventListener("click", function() {
+    clearInterval(openInterval)
+    clearInterval(closedInterval)
+    openInterval = null
+    closedInterval = null
+})
+
+//reset button
 
 buttonReset.addEventListener("click", function() {
     clearInterval(openInterval)
     clearInterval(closedInterval)
 
-    buttonOpen.disabled = false; 
-    buttonClose.disabled = true; 
+    // buttonOpen.disabled = false; 
+    // buttonClose.disabled = true; 
+
+    openInterval = null
+    closedInterval = null
 
     openSecondsCount = 00
     openTensCount = 00
