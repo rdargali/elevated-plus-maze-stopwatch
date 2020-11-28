@@ -59,7 +59,7 @@ buttonOpen.addEventListener("click", function() {
         openClicksCount++
         clearInterval(closedInterval)
         closedInterval = null
-        openInterval = setInterval(startOpenTimer)
+        openInterval = setInterval(startOpenTimer, 10)
     }
 })
 
@@ -102,7 +102,7 @@ buttonClose.addEventListener("click", function() {
         closedClicksCount++
         clearInterval(openInterval)
         openInterval = null
-        closedInterval = setInterval(startClosedTimer)
+        closedInterval = setInterval(startClosedTimer,10)
     }
 })
 
