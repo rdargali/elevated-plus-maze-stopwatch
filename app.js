@@ -105,6 +105,9 @@ buttonReset.addEventListener("click", function() {
     clearInterval(openInterval)
     clearInterval(closedInterval)
 
+    buttonOpen.disabled = false; 
+    buttonClose.disabled = true; 
+
     openSecondsCount = 00
     openTensCount = 00
     openClicksCount = 0
@@ -119,6 +122,5 @@ buttonReset.addEventListener("click", function() {
     closedTens.innerHTML = closedTensCount
     closedClicks.innerHTML = closedClicksCount
 
-    // appendSeconds.innerHTML = seconds
-    // appendTens.innerHTML = tens
+    
 })
