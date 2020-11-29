@@ -1,11 +1,3 @@
-let openSecondsCount = 00
-let openTensCount = 00
-let openClicksCount = 0
-
-let closedSecondsCount = 00
-let closedTensCount = 00
-let closedClicksCount = 0
-
 const openTens = document.getElementById("open-tens")
 const openSeconds = document.getElementById("open-seconds")
 const openClicks = document.getElementById("open-clicks")
@@ -18,6 +10,14 @@ const buttonOpen = document.getElementById("button-open")
 const buttonClose = document.getElementById("button-close")
 const buttonReset = document.getElementById("button-reset")
 const buttonStop = document.getElementById("button-stop")
+
+let openSecondsCount = 00
+let openTensCount = 00
+let openClicksCount = 0
+
+let closedSecondsCount = 00
+let closedTensCount = 00
+let closedClicksCount = 0
 
 let openInterval;
 let closedInterval;
@@ -51,6 +51,7 @@ function startOpenTimer() {
 
 //open button
 
+
 buttonOpen.addEventListener("click", function() {
 
     if(openInterval) {
@@ -61,6 +62,12 @@ buttonOpen.addEventListener("click", function() {
         closedInterval = null
         openInterval = setInterval(startOpenTimer, 10)
     }
+})
+
+document.addEventListener("keydown", function(e){
+    if (e.code === "KeyF") {
+        buttonOpen.click()
+      }
 })
 
 //close
@@ -106,6 +113,12 @@ buttonClose.addEventListener("click", function() {
     }
 })
 
+document.addEventListener("keydown", function(e){
+    if (e.code === "KeyJ") {
+        buttonClose.click()
+      }
+})
+
 //stop button
 
 buttonStop.addEventListener("click", function() {
@@ -113,6 +126,12 @@ buttonStop.addEventListener("click", function() {
     clearInterval(closedInterval)
     openInterval = null
     closedInterval = null
+})
+
+document.addEventListener("keydown", function(e){
+    if (e.code === "Space") {
+        buttonStop.click()
+      }
 })
 
 //reset button
@@ -139,4 +158,10 @@ buttonReset.addEventListener("click", function() {
     closedClicks.innerHTML = closedClicksCount
 
     
+})
+
+document.addEventListener("keydown", function(e){
+    if (e.code === "KeyR") {
+        buttonReset.click()
+      }
 })
