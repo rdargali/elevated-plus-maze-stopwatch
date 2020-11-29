@@ -61,3 +61,10 @@ button:hover {
   font-weight: 800;
   text-transform: capitalize;
 }
+
+#shortcuts-list {
+  display: flex;
+  list-style-type: none;
+  justify-content: space-around;
+  margin: auto 12vw;
+}

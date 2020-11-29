@@ -150,11 +150,11 @@ buttonReset.addEventListener("click", function() {
     closedTensCount = 00
     closedClicksCount = 0
 
-    openSeconds.innerHTML = openSecondsCount
-    openTens.innerHTML = openTensCount
+    openSeconds.innerHTML = openSecondsCount + "0"
+    openTens.innerHTML = openTensCount + "0"
     openClicks.innerHTML = openClicksCount
-    closedSeconds.innerHTML = closedSecondsCount
-    closedTens.innerHTML = closedTensCount
+    closedSeconds.innerHTML = closedSecondsCount + "0"
+    closedTens.innerHTML = closedTensCount + "0"
     closedClicks.innerHTML = closedClicksCount
 
     
