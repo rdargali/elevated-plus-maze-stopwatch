@@ -2,16 +2,16 @@
 
 - **Created for the Neurobiology of Memory lab at the University of Texas at Dallas for neural engineering and studies on PTSD**
 
-* **Use the buttons or keys to time experiment**
+* **An optimized timer for scoring results on an elevated plus maze. Use the buttons or keys to control timers.**
 
 ## Preview:
 
-<img src="src/assets/s1.png">
+<img src="assets/s1.png">
 
 ## Live Site:
 
-- [Multi Stopwatch](https://multistopwatch.netlify.app/)
+- [Elevated Plus Maze Stopwatch](https://epms.netlify.app/)
 
 ## Dependencies
 
-- Made with React
+- Made with HTML, CSS, and JavaScript
