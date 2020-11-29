@@ -33,7 +33,8 @@ h3 {
 #closed-seconds,
 #closed-tens,
 #open-clicks,
-#closed-clicks {
+#closed-clicks,
+.colon {
   font-size: 2em;
 }
 
