@@ -129,7 +129,7 @@ buttonStop.addEventListener("click", function() {
 })
 
 document.addEventListener("keydown", function(e){
-    if (e.code === "Space") {
+    if (e.code === "KeyP") {
         buttonStop.click()
       }
 })
