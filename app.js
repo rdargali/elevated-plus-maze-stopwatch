@@ -119,7 +119,7 @@ document.addEventListener("keydown", function(e){
       }
 })
 
-//stop button
+//pause button
 
 buttonStop.addEventListener("click", function() {
     clearInterval(openInterval)
